@@ -75,6 +75,19 @@ while True:
 '''
 完美数
 '''
+import math
+for num in range(10000):
+    result=0
+    for factor in range(1,math.sqrt(num)+1):
+        if num%factor==0:
+            result+=factor
+            if factor>1 and num//factor!=factor:
+                result+=num//factor
+if num==result:
+    print(num)
+'''
+另一种写法
+'''
 for num in range(1,10000):
     sum=0
     for x in range(1,10000):
@@ -82,6 +95,20 @@ for num in range(1,10000):
             sum+=x
     if sum==num:
         print(num)
+
+'''
+素数
+'''
+import math
+for num in range(100):
+    is_prime=True
+    for x in range(1,math.sqrt(num)+1):
+        if num%x==0:
+            is_prime=False
+            break
+    if is_prime:
+        print(num)
+
 
 '''
 100内素数
