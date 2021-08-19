@@ -127,3 +127,25 @@ if __name__ =='__main__':
     num=int(input('请输入整数：'))
     if is_palindrom(num) and is_prime(num):
         print('%d是回文素数'%num)
+'''
+局部作用，嵌套作用，全局作用
+'''
+def foo():
+    b='hello world'
+    def bar():
+        c=True
+        print(a)
+        print(b)
+        print(c)
+if __name__=='__main__':
+    a=100
+    foo()
+'''
+global关键词全局作用域，若全局没有a,则下一行代码定义变量a 并置于全局
+局域作用域修改嵌套作用域的变量可以用nonlocal
+'''
+def main():
+    #...闭包，局域作用域运行完还可以调用
+    pass
+if __name__=='__main__':
+    main()
