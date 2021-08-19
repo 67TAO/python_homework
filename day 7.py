@@ -45,6 +45,7 @@ print(str1.endswith('world'))
 print(str1.center(50,'*'))
 print(str1.center(80,'*'))
 print(str1.rjust(50,' '))
+print(str1.ljust(50,'8'))
 str2='abc123456'
 print(str2.isdigit())
 print(str2.isalpha())
