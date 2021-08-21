@@ -117,3 +117,150 @@ print(list3)
 print(list4)
 list1.sort(reverse=True)
 print(list1)
+'''
+生成式和生成器
+'''
+f=[x for x in range(100)]
+print(f)
+f=[x+y for x in 'ABCD' for y in '123456']
+print(f)
+f=[x**2 for x in range(1,1000)]
+print(f)
+for val in f:
+    print(f)
+'''
+斐波拉切数列
+'''
+def fib(n):
+    a=0
+    b=1#a,b=0,1
+    for _ in range(n):
+        a,b=b,a+b
+        yield a
+def main():
+    for val in fib(20):
+        print(val)
+if __name__=='__main__':
+    main()
+'''
+元组
+'''
+#元组的元素不能更改
+t=('骆昊',38,True,'四川成都')
+print(t)
+print(t[0])
+print(t[3])
+for number in t:#in t 表示等于其中代表的元素
+    print(number)
+for val in t:
+    print(val)
+t=('王大锤',20,True,'云南昆明')
+print(t)
+person=list(t)#元组转换成列表，列表可进行编辑
+print(person)
+person[0]='李小龙'
+person[3]='中国'
+print(person)
+#列表转元组
+fruits_list=['apple','orange','banana']
+fruits_tuple=tuple(fruits_list)#类似元组转列表list(tuple),列表转元组为tuple(list)
+print(fruits_tuple)
+print(fruits_tuple[0])
+print(fruits_tuple[2])
+f=[1,2,3,4,5]
+f_tuple=tuple(f)
+print(f_tuple[2])
+print(f_tuple)
+b=(1,2,3,4,5)
+b_list=list(b)
+print(b_list[0])
+print(b_list)
+
+'''
+集合
+'''
+set1={1,2,3,4,5,6,7}
+print(set1)
+print('length=',len(set1))
+set2=set(range(1,10))
+set3=set((1,2,3,2,2,1))#两个括号
+print(set2,set3)
+set4={num for num in range(1,100) if num%3==0 and num%5==0}
+print(set4)
+set1.add(4)
+print(set1)
+set1.add(5)
+print(set1)
+set1.add(10)
+print(set1)
+set1.update((11,12))#
+print(set1)
+set1.add((11,12,13))
+set1.update((11,12,13))
+print(set1)
+set1.discard(5)
+print(set1)
+if 4 in set1:
+    set1.remove(4)
+    print(set1)
+print(set1.pop())
+print(set1)
+set1={1,2,3,4,5}
+set2={3,4,5,6,7}
+set3={4,5}
+print(set1&set2)#交集
+print(set1|set2)#并集
+print(set1-set2)#差集
+print(set1^set2)#子集和超集
+print(set2<=set1)
+print(set1<=set2)
+print(set3<=set1)
+print(set2>=set3)
+'''
+字典
+'''
+#键值对
+scores={'骆昊':95,'百元房':78,'狄仁杰':82}
+print(scores)
+item1=dict(one=1,two=2,three=3,four=4)
+item2=dict(zip(['a','b','c'],'123')) #将两个序列压成字典
+item3={num:num**2 for num in range(1,10)}
+print(item1,item2,item3)
+print(scores['骆昊'])
+print(scores['狄仁杰'])
+for key in scores:
+    print(f'{key}:{scores[key]}')
+scores['百元房']=92
+scores['诸葛王明']=72
+scores.update(冷面=67,放弃和=85)
+print(scores)
+if '武则天' in scores:
+    print(scores['武则天'])
+print(scores.get('武则天'))
+print(scores.get('武则天',60))
+print(scores.popitem())#popitem,从后往前减，与字符串和序列不同
+print(scores.popitem())
+print(scores)
+print(scores.pop('骆昊',95))
+print(scores)
+scores.clear()
+print(scores)
+'''
+练习
+'''
+'''
+跑马灯
+'''
+import os
+import time
+def main():
+    content='北京欢迎你为你开天辟地....'
+    while True:
+        print(content)
+        time.sleep(1)
+        content=content[1:]+content[0]
+if __name__=='__main__':
+    print(main())
+
+
+
