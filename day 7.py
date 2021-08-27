@@ -262,5 +262,54 @@ def main():
 if __name__=='__main__':
     print(main())
 
+'''
+验证码
+'''
+import random
+def generate_code(len_code=4):
+    str='0123456789abcdefghigklmnopqistuvwxyzABCDEFGHIGKLMNOPQISTUVWXYZ'
+    code=''
+    for _ in range(len_code):
+        index=random.randiant(len(str)-1)
+        code+=str[index]
+    return code
+'''
+函数后缀
+'''
+def get_suffix(filename,haadot=False):
+    pose=filename.rfind('.')
+    if 0<pose<len(filename):
+        index=pose if hasdot else pose+1
+        return filename[index:]
+    else:
+        return ''
+'''
+返回最大值和第二大值
+'''
+def max(2)(m1,m2):
+    m1,m2=(x[0],x[1]) if x[0]>x[1] else(x[1],x[0])
+    for index in range(len(x)-1):
+        if x[index]>m1:
+            m2=m1
+            m1=x[index]
+        elif x[index]>m2:
+            m2=x[index]
+    return m1,m2
+'''
+年月日
+'''
+def is leapyear(year):
+    return year%4==0 and year%100!=0 or year%400==0
+def which_day(year,month,day):
+        days_of_month=[[31,28,31,30,31,30,31,31,30,31,30,31],[31,29,31,30,31,30,31,31,30,31,30,31][is leapyear(year)]]
+        total=0
+        for index in range(month-1):
+            total+=days_of_month[index]
+        return total
+def main()
+    print(which_day(1997,8,24))
+    print(which_day(1765,12,12))
+if __name__=='__main__':
+   print(main())
 
 
