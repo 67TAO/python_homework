@@ -311,5 +311,53 @@ def main()
     print(which_day(1765,12,12))
 if __name__=='__main__':
    print(main())
+'''
+杨辉三角
+'''
+
+'''
+彩票选号
+'''
+from random import randint,sample
+def gennerate():
+    red_balls=[x for x in range(1,34)]
+    selected_balls=sample(red_balls,6)
+    selected_balls.sort()
+    selected_balls.append(randint(1,6))
+    return selected_balls
+def display():
+    for index, ball in enumerate(balls):
+        print(f'{balls:0>2d}',end='')
+    if index==len(balls)-2:
+        print('|',end='')
+    print()
+num=int(input('几注'))
+for_ in range(num):
+    display(gennerate())
+'''
+约瑟夫环
+幸运的基督徒
+'''
+def main():
+    persons=[True]*30
+    circle,num,index=0,0,0
+    while circle<15:
+        if persons[index]:
+            num+=1
+            if num==9:
+                persom[index]=[False]
+                circle+=1
+                num=0
+            index+=1
+            index%=30#?????有些不解
+    for person in persons:
+        print('基督教'if person else '非',end='')
+if __name__=='__main__':
+    main()
+
+
+
+
+
 
 
